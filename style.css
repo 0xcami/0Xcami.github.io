@@ -1,3 +1,8 @@
+html, body {
+  overscroll-behavior: none;
+  background-color: #0A16FF;
+}
+
 :root {
   --main-bg: #0A16FF;
   --section-bg: linear-gradient(to bottom right, #C6FF00, #69F0AE);
@@ -154,7 +159,8 @@ nav {
   position: relative;
 }
 .content {
-  background: var(--section-bg);
+  min-height: 100vh;
+  background: linear-gradient(to bottom right, #C6FF00, #69F0AE);
   color: #000;
   font-size: 1.5em;
   padding: 4em 10vw;
