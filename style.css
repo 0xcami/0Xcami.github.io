@@ -1,3 +1,4 @@
+
 html, body {
   overscroll-behavior: none;
   background-color: #0A16FF;
@@ -134,12 +135,12 @@ nav {
   overflow: hidden;
   background: var(--main-bg);
   color: var(--text-color);
-  padding-top: 5em;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   text-align: center;
+  gap: 2rem;
 }
 .hero canvas {
   position: absolute;
@@ -197,4 +198,18 @@ a.enter-link:hover {
   .overlay.show {
     display: block;
   }
+}
+
+.ascii-refinery {
+  font-family: 'Doto', monospace;
+  font-size: 1.4rem;
+  font-weight: 900;
+  line-height: 1.6;
+  white-space: pre;
+  color: var(--text-color);
+  padding-bottom: 2rem;
+  margin-top: 1.5rem;
+  text-align: center;
+  z-index: 1;
+  position: relative;
 }
