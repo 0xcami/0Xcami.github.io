@@ -1,0 +1,388 @@
+html, body {
+  overscroll-behavior: none;
+  background-color: #0A16FF;
+  margin: 0;
+  font-family: 'PT Mono', monospace;
+  color: white;
+}
+
+:root {
+  --main-bg: #0A16FF;
+  --section-bg: linear-gradient(to bottom right, #0affdb, #2626ff);; /* degradado actualizado */
+  --primary: #E92066;
+  --highlight: #FFD700;
+  --text-color: #FFFFFF;
+  --underline-hover: #FFFFFF;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'PT Mono', monospace;
+}
+
+nav {
+  background-color: transparent;
+  padding: 0.5em 1em;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 10;
+}
+
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-left, .nav-right {
+  display: flex;
+  gap: 0.3em;
+}
+
+.nav-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.3em;
+}
+
+.nav-links a {
+  background-color: var(--primary);
+  color: var(--text-color);
+  padding: 0.7em 1.2em;
+  text-decoration: none;
+  font-size: 1em;
+  display: inline-block;
+  position: relative;
+  transition: all 0.2s ease;
+}
+
+.nav-links a:hover {
+  text-decoration: none;
+}
+
+.nav-links a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 5px;
+  background-color: var(--underline-hover);
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+.nav-links a:hover::after {
+  opacity: 1;
+}
+
+.menu-toggle {
+  display: none;
+  background-color: var(--primary);
+  color: var(--text-color);
+  border: none;
+  font-size: 1.2em;
+  padding: 0.5em 1em;
+  cursor: pointer;
+  position: relative;
+  z-index: 12;
+}
+
+.overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  backdrop-filter: blur(8px);
+  z-index: 9;
+}
+
+.mobile-menu {
+  display: none;
+  flex-direction: column;
+  background-color: var(--primary);
+  padding: 1em;
+  position: fixed;
+  top: 3.5em;
+  left: 1em;
+  width: calc(100% - 2em);
+  max-width: 300px;
+  z-index: 11;
+}
+
+.mobile-menu a {
+  color: var(--text-color);
+  text-decoration: none;
+  margin: 0.5em 0;
+  font-size: 1.2em;
+  position: relative;
+  padding: 0.7em 1.2em;
+  background-color: var(--primary);
+  transition: all 0.2s ease;
+}
+
+.mobile-menu a:hover {
+  text-decoration: none;
+}
+
+.mobile-menu a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 5px;
+  background-color: var(--underline-hover);
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+.mobile-menu a:hover::after {
+  opacity: 1;
+}
+
+.hero {
+  height: 100vh;
+  position: relative;
+  overflow: hidden;
+  background: var(--main-bg);
+  color: var(--text-color);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: 2rem;
+}
+
+.hero canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+}
+
+.hero h1 {
+  font-size: 2.5em;
+  font-family: 'Doto', sans-serif;
+  margin-bottom: 0.3em;
+  color: var(--text-color);
+  text-shadow: none;
+  z-index: 1;
+  position: relative;
+}
+
+.ascii-refinery {
+  font-family: 'Doto', monospace;
+  font-size: 10px;
+  font-weight: 900;
+  line-height: 10px;
+  white-space: pre;
+  color: var(--text-color);
+  padding-bottom: 2rem;
+  margin-top: 1.5rem;
+  text-align: center;
+  z-index: 1;
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-bottom: -20px;
+}
+
+.content {
+  min-height: 100vh;
+  background: var(--section-bg); /* ✅ usa variable modificada */
+  color: white;
+  font-size: 1.5em;
+  padding: 4em 10vw;
+  text-align: justify;
+  line-height: 1.6em;
+}
+
+.content p {
+  margin-bottom: 1em;
+}
+
+a {
+  color: #00FFB3;
+  text-decoration: none;
+}
+
+a.enter-link {
+  color: var(--primary);
+  transition: color 0.3s ease;
+  font-family: 'Doto', sans-serif;
+  font-weight: 600;
+}
+
+a.enter-link:hover {
+  color: var(--highlight);
+  text-decoration: none;
+}
+
+@media (max-width: 768px) {
+  .nav-links {
+    display: none;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+
+  .mobile-menu.show {
+    display: flex;
+  }
+
+  .overlay.show {
+    display: block;
+  }
+}
+
+.footer-contact {
+  background: var(--main-bg);
+  color: var(--text-color);
+  padding: 3em 2em;
+  text-align: center;
+  font-family: 'PT Mono', monospace;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.footer-contact form {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+  max-width: 500px;
+  width: 100%;
+}
+
+.footer-contact input,
+.footer-contact textarea {
+  background: var(--main-bg);
+  border: 2px solid var(--text-color);
+  color: var(--text-color);
+  padding: 0.8em;
+  font-family: inherit;
+  font-size: 1em;
+  resize: vertical;
+}
+
+.footer-contact input::placeholder,
+.footer-contact textarea::placeholder {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.footer-contact input:focus,
+.footer-contact textarea:focus {
+  outline: none;
+  box-shadow: none;
+  border-color: var(--underline-hover);
+  background-color: var(--main-bg);
+  color: var(--text-color);
+}
+
+.footer-contact input:-webkit-autofill,
+.footer-contact textarea:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0px 1000px var(--main-bg) inset;
+  -webkit-text-fill-color: var(--text-color);
+  transition: background-color 5000s ease-in-out 0s;
+}
+
+.footer-contact button {
+  background-color: var(--primary);
+  color: var(--text-color);
+  padding: 0.7em 1.2em;
+  border: none;
+  cursor: pointer;
+  font-weight: normal;
+  font-family: 'PT Mono', monospace;
+  font-size: 1em;
+  position: relative;
+  transition: all 0.2s ease;
+}
+
+.footer-contact button::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 5px;
+  background-color: var(--underline-hover);
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+.footer-contact button:hover::after {
+  opacity: 1;
+}
+
+.footer-contact button:hover {
+  text-decoration: none;
+}
+
+.footer-contact button[type="submit"] {
+  background-color: var(--main-bg);
+  color: var(--text-color);
+  border: 2px solid var(--text-color);
+  font-family: 'PT Mono', monospace;
+  font-size: 1.1em;
+  padding: 0.7em 1.2em;
+  position: relative;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.footer-contact button[type="submit"]::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 4px;
+  background-color: var(--underline-hover);
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+.footer-contact button[type="submit"]:hover::after {
+  opacity: 1;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* Oculta campos como el honeypot */
+.hidden-field {
+  display: none !important;
+}
+
+.dpsp-credits {
+  margin-top: 2em;
+  text-align: center;
+  color: var(--text-color);
+  font-family: 'PT Mono', monospace;
+}
+
+.dpsp-credits img.dpsp-logo {
+  width: 60px;
+  height: auto;
+  margin-bottom: 0.5em;
+}
+
+.dpsp-credits p {
+  font-size: 1.1em;
+}

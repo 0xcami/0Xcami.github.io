@@ -1,0 +1,20 @@
+<footer class="footer-contact" id="ayuda">
+    <form id="contact-form" method="POST" action="https://formspree.io/f/mjkyerdn">
+      <label for="email">Email:</label>
+      <input type="email" name="email" id="email" required placeholder="tu@email.com" />
+  
+      <label for="message">Mensaje:</label>
+      <textarea name="message" id="message" placeholder="¿Qué tienes en mente?" required></textarea>
+  
+      <input type="text" name="_gotcha" class="hidden-field" tabindex="-1" autocomplete="off">
+  
+      <input type="hidden" name="csrf_token" id="csrf_token">
+  
+      <button type="submit">Enviar</button>
+    </form>
+    <p id="form-status" class="form-status-message"></p>
+    <div class="dpsp-credits">
+      <img src="assets/dpsp.png" alt="Logo DPSP" class="dpsp-logo" />
+      <p>© Diario de una planta sin parches</p>
+    </div>
+  </footer>
