@@ -1,3 +1,11 @@
+function showFieldError(field, message) {
+  const error = document.createElement("div");
+  error.className = "input-error";
+  error.textContent = message;
+  field.insertAdjacentElement("afterend", error);
+  setTimeout(() => error.remove(), 2000);
+}
+
 function initFormHandler() {
   let formStartTime = Date.now();
 
@@ -34,16 +42,25 @@ function initFormHandler() {
       status.textContent = "⏳ Espera unos segundos antes de enviar.";
       return;
     }
-
+    
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (!emailRegex.test(email)) {
-      status.textContent = "❌ Email inválido.";
-      return;
-    }
-    if (message.length < 10) {
-      status.textContent = "❌ El mensaje debe tener al menos 10 caracteres.";
-      return;
-    }
+    // Limpia errores anteriores
+const previousError = form.querySelector(".input-error");
+if (previousError) previousError.remove();
+
+if (!emailRegex.test(email)) {
+  showFieldError(form.email, "❌ El correo debe tener un '@' y un dominio válido.");
+  return;
+}
+if (!emailRegex.test(email)) {
+  showFieldError(form.email, "❌ El correo debe tener un '@' y un dominio válido.");
+  return;
+}
+
+if (message.length < 10) {
+  showFieldError(form.message, "❌ El mensaje debe tener al menos 10 caracteres.");
+  return;
+}
 
     try {
       const response = await fetch("https://formspree.io/f/mjkyerdn", {
