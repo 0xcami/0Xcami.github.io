@@ -4,79 +4,93 @@
     <title>Diario de una planta sin parches</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  
+
+    <!-- Content Security Policy -->
+    <meta http-equiv="Content-Security-Policy" content="
+  default-src 'self';
+  script-src 'self' 'unsafe-inline';
+  style-src 'self' https://fonts.googleapis.com 'unsafe-inline';
+  font-src https://fonts.gstatic.com;
+  img-src 'self' data:;
+  connect-src *;
+  form-action 'self' https://formspree.io;
+  base-uri 'self';
+  frame-ancestors 'none';
+">
+
     <!-- Meta para SEO -->
     <meta name="description" content="Diario de una planta sin parches - Un blog sobre ciberseguridad industrial, tecnología, y arte digital.">
     <meta name="keywords" content="ciberseguridad, tecnología, arte digital, hacking, OT, planta sin parches, blog, cyberpunk">
     <meta name="author" content="Cami">
     <meta name="robots" content="index, follow">
-  
+
     <!-- Open Graph -->
     <meta property="og:title" content="Diario de una planta sin parches">
     <meta property="og:description" content="Un blog que fusiona ciberseguridad, ciberfeminismo, tecnología y arte digital.">
     <meta property="og:image" content="https://dpsp.cl/assets/dpsp.png">
     <meta property="og:url" content="https://dpsp.cl">
     <meta property="og:type" content="website">
-  
+
     <!-- Canonical Link -->
     <link rel="canonical" href="https://dpsp.cl">
-  
+
     <!-- Fuentes y estilos -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Doto:wght@100..900&family=PT+Mono&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
-  
+
     <!-- Favicon -->
     <link rel="icon" href="assets/dpsp_favicon.ico" type="image/x-icon">
     <link rel="icon" href="assets/favicon-32x32.png" sizes="32x32">
     <link rel="icon" href="assets/android-chrome-192x192.png" sizes="192x192">
   </head>
-<body>
-  <div class="overlay"></div>
-  <div id="navbar-container"></div>
-  <script src="js/include-navbar.js"></script>
-  <section class="hero">
-    <canvas id="bg-art"></canvas>
+  <body>
+    <div class="overlay"></div>
+    <div id="navbar-container"></div>
+    <script src="js/include-navbar.js"></script>
 
-    <pre class="ascii-refinery">
-                         |||               |||             |||
-                         |||               |||             |||
-                         |||               |||             |||
-                         |||               |||             |||
-                         |||               |||             |||
-                       ///////           ///////         ///////
-                      |||||||||         |||||||||       |||||||||
-                     |||||||||||       |||||||||||     |||||||||||
-                     |||||||||||       |||||||||||     |||||||||||
-                     |||||||||||       |||||||||||     |||||||||||
-                    ============       ============     ===========
-                     |   |   |          |   |   |        |   |   |
-                 ____|___|___|__________|___|___|________|___|___|____
-                |   ___    ___     ||     ___    ___     ___    ___  |
-                |__|###|==|###|====||====|###|==|###|===|###|==|###|__|
-                |__|___|  |___|    ||    |___|  |___|   |___|  |___|__|
-                |                                                   |
-                |  ___     ___               ___      ___      ___  |
-                | |   |   |   |             |   |    |   |    |   | |
-                | |___|   |___|             |___|    |___|    |___| |
-                |                                                  DPSP
-                |___________________________________________________|
-    </pre>
+    <section class="hero">
+      <canvas id="bg-art"></canvas>
 
-    <h1>Diario de una planta sin parches</h1>
-  </section>
+      <pre class="ascii-refinery">
+                           |||               |||             |||
+                           |||               |||             |||
+                           |||               |||             |||
+                           |||               |||             |||
+                           |||               |||             |||
+                         ///////           ///////         ///////
+                        |||||||||         |||||||||       |||||||||
+                       |||||||||||       |||||||||||     |||||||||||
+                       |||||||||||       |||||||||||     |||||||||||
+                       |||||||||||       |||||||||||     |||||||||||
+                      ============       ============     ===========
+                       |   |   |          |   |   |        |   |   |
+                   ____|___|___|__________|___|___|________|___|___|____
+                  |   ___    ___     ||     ___    ___     ___    ___  |
+                  |__|###|==|###|====||====|###|==|###|===|###|==|###|__|
+                  |__|___|  |___|    ||    |___|  |___|   |___|  |___|__|
+                  |                                                   |
+                  |  ___     ___               ___      ___      ___  |
+                  | |   |   |   |             |   |    |   |    |   | |
+                  | |___|   |___|             |___|    |___|    |___| |
+                  |                                                  DPSP
+                  |___________________________________________________|
+      </pre>
 
-  <section class="content">
-    <p>we are the virus<br>of the new world disorder</p>
-    <p>invading filthy binaries<br>penetrating sterile minds</p>
-    <p>we are the future cunt</p>
-    <p>see you in cyberspace</p>
-    <p><a href="#" class="enter-link">[ ENTER ]</a></p>
-  </section>
+      <h1>Diario de una planta sin parches</h1>
+    </section>
 
-  <script src="js/script.js"></script>
-  <div id="footer-container"></div>
-  <script src="js/include-footer.js"></script>
-</body>
+    <section class="content">
+      <p>we are the virus<br>of the new world disorder</p>
+      <p>invading filthy binaries<br>penetrating sterile minds</p>
+      <p>we are the future cunt</p>
+      <p>see you in cyberspace</p>
+      <p><a href="#" class="enter-link">[ ENTER ]</a></p>
+    </section>
+
+    <script src="js/script.js"></script>
+    <div id="footer-container"></div>
+    <script src="js/include-footer.js"></script>
+  </body>
 </html>
