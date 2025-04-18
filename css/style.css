@@ -161,6 +161,7 @@ nav {
   justify-content: center;
   text-align: center;
   gap: 2rem;
+  padding-top: 80px; /* Añadido para dar espacio al navbar */
 }
 
 .hero canvas {
@@ -178,8 +179,13 @@ nav {
   margin-bottom: 0.3em;
   color: var(--text-color);
   text-shadow: none;
-  z-index: 1;
+  z-index: 3; /* Aumentado para asegurar que esté por encima de todo */
   position: relative;
+  margin-top: -100px; /* Mueve el título hacia arriba */
+  padding: 0 20px; /* Añade espacio a los lados en pantallas pequeñas */
+  background-color: rgba(0,0,0,0); /* Fondo semi-transparente para mejorar legibilidad */
+  padding: 10px 20px; /* Espacio interno para el fondo */
+  border-radius: 4px; /* Bordes redondeados */
 }
 
 .ascii-refinery {
@@ -246,6 +252,11 @@ a.enter-link:hover {
 
   .overlay.show {
     display: block;
+  }
+  
+  .hero h1 {
+    font-size: 2em; /* Tamaño reducido para móviles */
+    margin-top: -80px; /* Ajustado para móviles */
   }
 }
 
@@ -399,30 +410,4 @@ html {
   padding-bottom: 0;
   margin-bottom: 0;
   display: block;
-}
-
-.hero {
-  height: 100vh;
-  position: relative;
-  overflow: hidden;
-  background: var(--main-bg);
-  color: var(--text-color);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  gap: 2rem;
-  padding-bottom: 0;
-  margin-bottom: 0;
-}
-
-.hero h1 {
-  font-size: 2.5em;
-  font-family: "Doto", sans-serif;
-  margin-bottom: 0.3em;
-  color: var(--text-color);
-  text-shadow: none;
-  z-index: 2;
-  position: relative;
 }
