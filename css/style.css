@@ -1,6 +1,6 @@
 html, body {
   overscroll-behavior: none;
-  background-color: #0A16FF;
+  background-color: #0A16FF; 
   margin: 0;
   font-family: 'PT Mono', monospace;
   color: white;
@@ -385,4 +385,44 @@ html {
 
 .dpsp-credits p {
   font-size: 1.1em;
+}
+
+.refinery-image {
+  max-width: 100%;
+  height: auto;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  z-index: 1;
+  padding-bottom: 0;
+  margin-bottom: 0;
+  display: block;
+}
+
+.hero {
+  height: 100vh;
+  position: relative;
+  overflow: hidden;
+  background: var(--main-bg);
+  color: var(--text-color);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: 2rem;
+  padding-bottom: 0;
+  margin-bottom: 0;
+}
+
+.hero h1 {
+  font-size: 2.5em;
+  font-family: "Doto", sans-serif;
+  margin-bottom: 0.3em;
+  color: var(--text-color);
+  text-shadow: none;
+  z-index: 2;
+  position: relative;
 }
